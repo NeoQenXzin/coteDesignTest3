@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+.main{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main h1{
+  color: transparent;
+  /* color: red; */
+}
+
+.logoContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-115% , -50%);
+  padding: 20px;
+  border: double 5px #0e182d;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.93);
+}
+
+.logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 15px;
+}
+
+.logoImg{
+  width: 350px;
+  height: 80px;
+} 
+
+.textLogo{
+  color: #7f7f7f;
+  font-size: 22px;
+  font-weight: lighter;
+  margin-bottom: 5px;
+  font-family: 'Oswald', serif;
+  /* border-spacing: 30px;
+  border-collapse: separate; */
+  padding-bottom: 20px;
+  border-bottom: 2px dashed #7f7f7f;
+}
+.textAdress{
+
+  color: #111;
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 20px;
+  font-family: 'Oswald', serif;
+}
+.flagContainer{
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Oswald', serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+/* Background diaporama  */
+.backgroundSection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #0e182dc3;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9) contrast(1) saturate(1.1) grayscale(0.3);
+  transform: translateZ(0);
+}
+.animate{
+  /* animation: fadeCascadeBackground infinite 4s  ease-out; */
+  transition: transform linear;
+  /* animation-iteration-count: 5; */
+
+}
+@keyframes fadeCascadeBackground {
+  0% {
+   /* opacity: .2; */
+   opacity: 0;
+    transform: scale(1);
+  }
+  5% {
+   /* opacity: .2; */
+   opacity: 1;
+    transform: scale(1);
+  }
+  85% {
+    /* transform: scale(1.05); */
+  }
+  90% {
+  /* opacity: .6; */
+    /* transform: scale(1.052); */
+  }
+  95% {
+  opacity: 1;
+    /* transform: scale(1.058); */
+  }
+  100% {
+  opacity: 0;
+    transform: scale(1.06);
+  }
+}
+.scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: repeating-linear-gradient(rgba(0, 0, 0, 0.735) 0, rgba(0, 0, 0, 0.502) 2px, transparent 2px, transparent 5px); */
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.5; /* Réduire l'opacité des scanlines */
+  animation: scanlinesAnimation 8s infinite linear;
+}
+
+@keyframes scanlinesAnimation {
+  0%, 100% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 0 100%;
+  }
+}
+
+/* Media querries */
+
+
+@media (max-width: 1531px) {
+  .logoContainer {
+    justify-content: center;
+    transform:none;
+  }
+
+}
+@media (max-width: 1531px) and (min-width:1180px) {
+  .main{
+    
+    align-items:flex-start;
+    padding-left: 30px;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+}
+
+
+@media (max-width: 1179px) {
+  .logoContainer {
+    width: 50%;
+    margin: 0 auto; /* Pour centrer la div sur l'écran */
+  }
+  
+  .logoImg {
+    width: 200px;
+    height: 60px;
+  }
+}
+@media (max-width: 768px) {
+  .logoContainer {
+    transform: none;
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+
+  .logoContainer {
+    width: 80%;
+    margin: 0 auto; /* Pour centrer la div sur l'écran */
+  }
+
+  .textLogo {
+    font-size: 16px;
+  }
+
+  .textAdress {
+    font-size: 10px;
+  }
+
+  .logoImg {
+    width: 200px;
+    height: 60px;
+  }
+}
+
